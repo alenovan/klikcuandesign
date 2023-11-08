@@ -50,7 +50,14 @@ export function DateRangePicker({
 
   return (
     <div className={cn("inline-flex gap-3", className)}>
-      <Popover open={showStartDate}>
+      <Popover
+        open={showStartDate}
+        onOpenChange={() => {
+          if (showStartDate) {
+            setShowStartDate(false);
+          }
+        }}
+      >
         <PopoverTrigger asChild>
           <Button
             id="start-date"
@@ -88,7 +95,14 @@ export function DateRangePicker({
           />
         </PopoverContent>
       </Popover>
-      <Popover open={showEndDate}>
+      <Popover
+        open={showEndDate}
+        onOpenChange={() => {
+          if (showEndDate) {
+            setShowEndDate(false);
+          }
+        }}
+      >
         <PopoverTrigger asChild>
           <Button
             id="end-date"
