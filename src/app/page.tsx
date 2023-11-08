@@ -1,10 +1,10 @@
-import { Input } from "@/components/Input/Input";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
+import HomePageHeader from "@/modules/Homepage/HomePageHeader";
 
 export default function Home() {
   return (
     <DashboardLayout>
-      <Input placeholder="Beno here" />
+      <HomePageHeader />
     </DashboardLayout>
   );
 }
