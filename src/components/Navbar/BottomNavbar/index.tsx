@@ -4,6 +4,8 @@ import { Home2, Profile, TaskSquare, TransactionMinus } from "iconsax-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import React from "react";
+import NextLink from 'next/link';
+import { Link } from '@chakra-ui/react';
 
 const menus = [
   {
@@ -36,44 +38,46 @@ const BottomNavbar = () => {
       <div className="container">
         <div className="flex justify-between gap-3">
           {menus.map((menu, idx) => (
-            <div
-              key={idx}
-              className="group/menu-item inline-flex flex-col justify-center items-center relative min-w-[65px] pb-2.5 pt-4"
-            >
-              <span
-                className={cn(
-                  "w-full h-[3px]  absolute top-0 left-0 rounded-b-md ",
-                  [
-                    {
-                      "bg-[#00AA12]": menu.href === path,
-                      "bg-transparent": menu.href !== path,
-                    },
-                  ]
-                )}
-              />
-              <span
-                className={cn(
-                  "text-[#C2C2C3] group-hover/menu-item:text-[#00AA12] mb-1",
-                  [
+            <Link as={NextLink} href={menu.href}>
+              <div
+                key={idx}
+                className="group/menu-item inline-flex flex-col justify-center items-center relative min-w-[65px] pb-2.5 pt-4"
+              >
+                <span
+                  className={cn(
+                    "w-full h-[3px]  absolute top-0 left-0 rounded-b-md ",
+                    [
+                      {
+                        "bg-[#00AA12]": menu.href === path,
+                        "bg-transparent": menu.href !== path,
+                      },
+                    ]
+                  )}
+                />
+                <span
+                  className={cn(
+                    "text-[#C2C2C3] group-hover/menu-item:text-[#00AA12] mb-1",
+                    [
+                      {
+                        "text-[#00AA12]": menu.href === path,
+                      },
+                    ]
+                  )}
+                >
+                  {menu.icon}
+                </span>
+                <p
+                  className={cn(
+                    "text-[#C2C2C3] group-hover/menu-item:text-[#00AA12] font-medium text-sm",
                     {
                       "text-[#00AA12]": menu.href === path,
-                    },
-                  ]
-                )}
-              >
-                {menu.icon}
-              </span>
-              <p
-                className={cn(
-                  "text-[#C2C2C3] group-hover/menu-item:text-[#00AA12] font-medium text-sm",
-                  {
-                    "text-[#00AA12]": menu.href === path,
-                  }
-                )}
-              >
-                {menu.label}
-              </p>
-            </div>
+                    }
+                  )}
+                >
+                  {menu.label}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
