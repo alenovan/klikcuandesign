@@ -2,12 +2,17 @@
 
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";
-import type { Metadata } from "next";
 import { Poppins as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import theme from "../../theme/theme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "@fontsource/poppins";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/800.css";
+import "@fontsource/poppins/900.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -30,14 +35,16 @@ export default function RootLayout({
   return (
     <CacheProvider>
       <QueryClientProvider client={queryClient}>
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
-        >
-          <ChakraProvider theme={theme}>{children}</ChakraProvider>
-        </body>
+        <html>
+          <body
+            className={cn(
+              "min-h-screen bg-background font-sans antialiased",
+              fontSans.variable
+            )}
+          >
+            <ChakraProvider theme={theme}>{children}</ChakraProvider>
+          </body>
+        </html>
       </QueryClientProvider>
     </CacheProvider>
   );

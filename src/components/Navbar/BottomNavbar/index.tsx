@@ -38,9 +38,9 @@ const BottomNavbar = () => {
       <div className="container">
         <div className="flex justify-between gap-3">
           {menus.map((menu, idx) => (
-            <Link as={NextLink} href={menu.href}>
+            <Link as={NextLink} href={menu.href} key={idx}>
               <div
-                key={idx}
+
                 className="group/menu-item inline-flex flex-col justify-center items-center relative min-w-[65px] pb-2.5 pt-4"
               >
                 <span
