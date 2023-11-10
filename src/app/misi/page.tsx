@@ -10,6 +10,7 @@ export default function Misi() {
   return (
     <DashboardLayout
       bottomNavigation={true}
+      px="15px"
       meta={{
         title: "Beli Followers Tik Tok | Jasa Followers Tik Tok",
         description: 'Cara mudah beli followers Tik Tok dan like Tik Tok secara aman dengan harga termurah di Indonesia hanya di smm panel viralizer.'

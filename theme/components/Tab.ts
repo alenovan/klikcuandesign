@@ -1,5 +1,5 @@
 import type { ComponentStyleConfig } from '@chakra-ui/theme'
- 
+
 const Tab: ComponentStyleConfig = {
   baseStyle: {
     tab: {
@@ -18,7 +18,6 @@ const Tab: ComponentStyleConfig = {
   defaultProps: {
     size: "md",
     variant: "line",
-    colorScheme: "blue",
   },
 }
 

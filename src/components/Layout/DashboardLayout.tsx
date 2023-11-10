@@ -9,6 +9,7 @@ interface IDashboardLayoutProps {
   children: React.ReactNode;
   navbarHeader?: NavbarHeaderProps;
   contenHeader?: ReactNode;
+  px?: string;
   bottomNavigation?: boolean;
   meta?: {
     title?: string,
@@ -24,6 +25,7 @@ const DashboardLayout = (props: IDashboardLayoutProps) => {
 
   const { children,
     navbarHeader,
+    px,
     contenHeader,
     meta,
     bottomNavigation,
@@ -48,11 +50,13 @@ const DashboardLayout = (props: IDashboardLayoutProps) => {
         <title>{meta?.title}</title>
         <meta name="description" content={meta?.description}></meta>
       </Head>
-      <NavbarHeader {...navbarHeader} />
+      <Box px={px}>
+        <NavbarHeader {...navbarHeader} />
+      </Box>
       <Container>
         <Box {...contentWrapperStyle}>{contenHeader}</Box>
       </Container>
-      <Container px={"15px"}>
+      <Container px={px}>
         <Box {...contentWrapperStyle}>{children}</Box>
       </Container>
       {bottomNavigation && <BottomNavbar />}

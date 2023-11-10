@@ -30,14 +30,14 @@ const NewsListItem = (props: INews) => {
 
                     />
                 </Box>
-                <Flex align="center" justify="space-between" p={4} mt={2}>
+                <Flex align="center" justify="space-between" px={4} py={4}>
                     <Box>
                         <Text fontFamily="Poppins" fontWeight="semibold" fontSize={"18px"}
                         >
                             {props?.title ??
                                 ""}
                         </Text>
-                        <Text fontFamily="Poppins" fontWeight="light" fontSize={"15px"} color={"#4A4A4A"}
+                        <Text fontFamily="Poppins" fontWeight="light" fontSize={"13px"} color={"#4A4A4A"}
                         >
                             {props?.body ??
                                 ""}
