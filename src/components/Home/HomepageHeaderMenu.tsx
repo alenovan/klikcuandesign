@@ -34,7 +34,7 @@ const HomePageHeaderMenu = () => {
             <Box>
               <HStack>
                 <AppIcon src={"wallet"} h={"35px"} />
-                <Text ml={2} fontSize={"20px"} fontWeight="semibold" fontFamily={"Poppins"} color={"#1D1D1D"}>Rp 120.000</Text>
+                <Text ml={2} fontSize={"18px"} fontWeight="semibold" fontFamily={"Poppins"} color={"#1D1D1D"}>Rp 120.000</Text>
               </HStack>
 
             </Box>
@@ -59,7 +59,7 @@ const HomePageHeaderMenu = () => {
                       <AppIcon src={item.icon} />
                     </Box>
 
-                    <Text mt={2} fontSize={15} fontWeight="medium" fontFamily="Poppins" color="#1D1D1D">
+                    <Text mt={2} fontSize={"13px"} fontWeight="medium" fontFamily="Poppins" color="#1D1D1D">
                       {item.title}
                     </Text>
                   </Box>

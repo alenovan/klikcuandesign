@@ -16,8 +16,8 @@ const HomePageHeader = () => {
           </span>
         </Flex>
         <Box mt={10}>
-          <Text ml={2} fontSize={"23px"} fontWeight="medium" fontFamily={"Poppins"} color={"#FFFFFF"}>Selamat Datang di KlikCuan</Text>
-          <Text ml={2} fontSize={"20px"} fontWeight="regular" fontFamily={"Poppins"} color={"#FFFFFF"}>Penghasil Uang Terbaik</Text>
+          <Text ml={2} fontSize={"21px"} fontWeight="medium" fontFamily={"Poppins"} color={"#FFFFFF"}>Selamat Datang di KlikCuan</Text>
+          <Text ml={2} fontSize={"18px"} fontWeight="regular" fontFamily={"Poppins"} color={"#FFFFFF"}>Penghasil Uang Terbaik</Text>
         </Box>
 
       </Stack>

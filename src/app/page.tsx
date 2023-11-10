@@ -1,9 +1,11 @@
 'use client';
 
+import HomeNews from "@/components/Home/HomeNews";
+import HomePlaformMissionGrid from "@/components/Home/HomePlaformMissionGrid";
 import HomePageHeaderMenu from "@/components/Home/HomepageHeaderMenu";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
-import PlaformMissionGrid from "@/components/Misi/PlaformMissionGrid";
 import HomePageHeader from "@/modules/Homepage/HomePageHeader";
+import { Box } from "@chakra-ui/react";
 
 
 const YourComponent = () => {
@@ -23,7 +25,9 @@ const YourComponent = () => {
       }}
     >
       <HomePageHeaderMenu />
-      <PlaformMissionGrid />
+      <HomePlaformMissionGrid />
+      <HomeNews />
+      <Box h={"200px"} />
     </DashboardLayout>
   );
 };

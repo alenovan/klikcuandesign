@@ -24,8 +24,8 @@ const PlatformlListItemItem = (props: PlatformlListItemItemProps) => {
             <Box
               width='56px'
               height='56px'
-              backgroundColor='white'
-              padding='8px'
+              backgroundColor='rgba(0, 170, 18, 0.09)'
+              padding='16px'
               borderRadius='16px'
               display='inline-flex'
               boxShadow='0px 5px 10px rgba(56, 89, 147, 0.05)'
