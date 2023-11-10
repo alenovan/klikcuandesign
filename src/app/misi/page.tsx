@@ -1,6 +1,6 @@
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import PlatformMission from "@/components/Misi/PlatformMission";
-
+import { Container } from "@chakra-ui/react";
 export default function Misi() {
 
 
@@ -18,8 +18,10 @@ export default function Misi() {
         showBackButton: true,
         title: "Misi"
       }}>
-      <PlatformMission title={"Instagram"} icon={"https://vrlzr-be.promosindo.web.id/uploads/platforms/1688800923.png"} mission={"6"} link={""} banner={"1"} platfrom={""} />
+      <Container>
+        <PlatformMission title={"Instagram"} icon={"https://vrlzr-be.promosindo.web.id/uploads/platforms/1688800923.png"} mission={"6"} link={""} banner={"1"} platfrom={""} />
 
+      </Container>
     </DashboardLayout>
   );
 }

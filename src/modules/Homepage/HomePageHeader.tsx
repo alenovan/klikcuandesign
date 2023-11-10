@@ -1,12 +1,26 @@
 import FloatingNotif from "@/components/FloatingNotif";
+import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
 const HomePageHeader = () => {
   return (
     <div className="bg-[url('/assets/images/bg-header.jpg')] w-full min-h-[250px] bg-cover bg-no-repeat bg-bottom p-4 rounded-b-3xl relative px-4 py-4">
-      <span className="absolute top-4 right-4">
-        <FloatingNotif />
-      </span>
+      <Stack>
+        <Flex>
+          <Box>
+            <Text ml={2} fontSize={"20px"} fontFamily={"Poppins"} color={"#FFFFFF"}>KlikCuan</Text>
+
+          </Box>
+          <span className="absolute top-4 right-4">
+            <FloatingNotif />
+          </span>
+        </Flex>
+        <Box mt={10}>
+          <Text ml={2} fontSize={"23px"} fontWeight="medium" fontFamily={"Poppins"} color={"#FFFFFF"}>Selamat Datang di KlikCuan</Text>
+          <Text ml={2} fontSize={"20px"} fontWeight="regular" fontFamily={"Poppins"} color={"#FFFFFF"}>Penghasil Uang Terbaik</Text>
+        </Box>
+
+      </Stack>
     </div>
   );
 };

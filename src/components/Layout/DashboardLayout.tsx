@@ -1,11 +1,14 @@
-import React from "react";
+'use client';
+
+import React, { ReactNode } from "react";
 import BottomNavbar from "../Navbar/BottomNavbar";
 import NavbarHeader, { NavbarHeaderProps } from "./NavbarHeader";
-import { Box, ChakraProps, Container } from "@chakra-ui/react";
+import { Box, ChakraProps, Container, useBreakpointValue } from "@chakra-ui/react";
 import Head from "next/head";
 interface IDashboardLayoutProps {
   children: React.ReactNode;
   navbarHeader?: NavbarHeaderProps;
+  contenHeader?: ReactNode;
   bottomNavigation?: boolean;
   meta?: {
     title?: string,
@@ -17,8 +20,11 @@ interface IDashboardLayoutProps {
 }
 
 const DashboardLayout = (props: IDashboardLayoutProps) => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   const { children,
     navbarHeader,
+    contenHeader,
     meta,
     bottomNavigation,
     backgroundColor = "gray.soft",
@@ -43,7 +49,10 @@ const DashboardLayout = (props: IDashboardLayoutProps) => {
         <meta name="description" content={meta?.description}></meta>
       </Head>
       <NavbarHeader {...navbarHeader} />
-      <Container >
+      <Container>
+        <Box {...contentWrapperStyle}>{contenHeader}</Box>
+      </Container>
+      <Container px={"15px"}>
         <Box {...contentWrapperStyle}>{children}</Box>
       </Container>
       {bottomNavigation && <BottomNavbar />}
