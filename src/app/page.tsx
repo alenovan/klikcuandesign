@@ -13,7 +13,7 @@ const YourComponent = () => {
   return (
     <DashboardLayout
       bottomNavigation={true}
-      px="15px"
+      px="20px"
       contenHeader={<HomePageHeader />}
       meta={{
         title: 'Beli Followers Tik Tok | Jasa Followers Tik Tok',
