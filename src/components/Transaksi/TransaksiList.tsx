@@ -1,9 +1,7 @@
 
 import {
     Box, Stack,
-    Text,
-    Container,
-    Flex,
+    Text, Flex,
     Image,
     Divider,
     HStack

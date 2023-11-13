@@ -31,13 +31,13 @@ export default function Transaksi() {
                     onChange={setActiveTab}
                 >
                     <TabList >
-                        <Tab fontFamily="Poppins" fontSize={"14px"} bg={activeTab === 0 ? "#00AA12" : "transparent"} color={activeTab === 0 ? "#00AA12" : "#808089"}>
+                        <Tab fontFamily="Poppins" fontSize={"14px"} bg={activeTab === 0 ? "transparent" : "transparent"} color={activeTab === 0 ? "#00AA12" : "#808089"}>
                             Semua
                         </Tab>
-                        <Tab fontFamily="Poppins" fontSize={"14px"} bg={activeTab === 1 ? "#00AA12" : "transparent"} color={activeTab === 1 ? "#00AA12" : "#808089"}>
+                        <Tab fontFamily="Poppins" fontSize={"14px"} bg={activeTab === 1 ? "transparent" : "transparent"} color={activeTab === 1 ? "#00AA12" : "#808089"}>
                             Menunggu
                         </Tab>
-                        <Tab fontFamily="Poppins" fontSize={"14px"} bg={activeTab === 2 ? "#00AA12" : "transparent"} color={activeTab === 2 ? "#00AA12" : "#808089"}>
+                        <Tab fontFamily="Poppins" fontSize={"14px"} bg={activeTab === 2 ? "transparent" : "transparent"} color={activeTab === 2 ? "#00AA12" : "#808089"}>
                             Sukses
                         </Tab>
                     </TabList>

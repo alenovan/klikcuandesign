@@ -3,8 +3,9 @@
 import { Box, Flex, Heading } from '@chakra-ui/react';
 import { FC, ReactNode } from 'react';
 import HeaderSection from './HeaderSection';
-import { HiArrowLeft } from 'react-icons/hi';
+import { HiArrowLeft, HiChevronLeft } from 'react-icons/hi';
 import { useRouter } from 'next/navigation';
+import AppIcon from '../AppIcon';
 export interface NavbarHeaderProps {
   showBackButton?: boolean
   showTitle?: boolean
@@ -52,11 +53,9 @@ const NavbarHeader: FC<NavbarHeaderProps> = (props) => {
               gap={2}
               alignItems="center"
             >
-              <HiArrowLeft
-                cursor="pointer"
-                color={"black"}
-                onClick={() => router.back()}
-              />
+              <Box cursor="pointer" onClick={() => router.back()}>
+                <AppIcon src={"chevron-left"} color={"black"} />
+              </Box>
               <Heading fontSize="md" fontFamily="Poppins" fontWeight="semibold" color={"black"}>{title}</Heading>
             </Box>
             <Box
@@ -71,7 +70,7 @@ const NavbarHeader: FC<NavbarHeaderProps> = (props) => {
             </Box>
           )}
         </HeaderSection>
-      </Box>}
+      </Box >}
 
     </>
   )
