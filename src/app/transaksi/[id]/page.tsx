@@ -1,7 +1,6 @@
 'use client';
 
 import DashboardLayout from "@/components/Layout/DashboardLayout";
-import NotificationList from "@/components/Notification/NotificationList";
 import TransaksiDetail from "@/components/Transaksi/TransaksiDetail";
 import TransaksiDetailItem from "@/components/Transaksi/TransaksiDetailItem";
 

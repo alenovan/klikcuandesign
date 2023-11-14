@@ -1,6 +1,6 @@
 "use client";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
-import { Box, Center, Flex, HStack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Container } from '@chakra-ui/react';
+import { Box, Center, Flex, HStack, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react';
 import { useState } from "react";
 import AppIcon from "@/components/AppIcon";
 import TransaksiList from "@/components/Transaksi/TransaksiList";
