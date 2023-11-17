@@ -3,6 +3,7 @@ import { m } from 'framer-motion'
 import Container from './components/Container';
 import Modal from './components/Modal';
 import Checkbox from './components/Checkbox';
+import Input from './components/Input';
 
 
 const breakpoints = ["30em", "48em", "62em", "80em"];

@@ -56,7 +56,7 @@ const NavbarHeader: FC<NavbarHeaderProps> = (props) => {
               <Box cursor="pointer" onClick={() => router.back()}>
                 <AppIcon src={"chevron-left"} color={"black"} />
               </Box>
-              <Heading fontSize="md" fontFamily="Poppins" fontWeight="semibold" color={"black"}>{title}</Heading>
+              <Heading fontSize="md" fontFamily="Poppins" fontWeight="semibold" color={"black"} mt={"3px"}>{title}</Heading>
             </Box>
             <Box
               ml="auto"

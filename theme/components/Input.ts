@@ -1,5 +1,5 @@
 import type { ComponentStyleConfig } from '@chakra-ui/theme'
- 
+
 const Input: ComponentStyleConfig = {
   baseStyle: {
     field: {
@@ -26,7 +26,7 @@ const Input: ComponentStyleConfig = {
         borderBottomLeftRadius: "8px",
         borderBottomRightRadius: "8px",
         borderColor: "#F2F2F2",
-        bg: "white",
+        bg: "#F2F2F2",
         // bg: mode("gray.100", "whiteAlpha.50")(props),
         _hover: {
           // bg: mode("gray.200", "whiteAlpha.100")(props),
