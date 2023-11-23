@@ -80,3 +80,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+.borderless-input {
+  border: none;
+  border-radius: 0; 
+  outline: none;  
+}
