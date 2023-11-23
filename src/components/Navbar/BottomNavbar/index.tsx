@@ -68,7 +68,7 @@ const BottomNavbar = () => {
                 </span>
                 <p
                   className={cn(
-                    "text-[#C2C2C3] group-hover/menu-item:text-[#00AA12] font-medium text-sm",
+                    "text-[#C2C2C3] group-hover/menu-item:text-[#00AA12] font-regular text-sm",
                     {
                       "text-[#00AA12]": menu.href === path,
                     }
