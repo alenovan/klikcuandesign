@@ -1,8 +1,6 @@
 "use client";
 
-import React from "react";
-import { Poppins } from "next/font/google";
-import { Box, Flex, Image, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 
 interface INews {

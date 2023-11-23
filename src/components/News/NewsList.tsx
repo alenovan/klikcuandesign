@@ -1,16 +1,7 @@
 
 import {
-    Box,
-    Center,
-    Grid,
-    GridItem,
-    Skeleton,
-    SkeletonCircle,
-    Stack,
-    Text,
-    Container,
+    Stack
 } from "@chakra-ui/react";
-import React, { useMemo } from "react";
 import NewsListItem from "./NewsListItem";
 
 type NewsListProps = {
@@ -36,6 +27,7 @@ const NewsList = (props: NewsListProps) => {
         <Stack  >
             {menu?.map((item, i) => (
                 <NewsListItem
+                    key={i}
                     image={item.icon}
                     title={item.title}
                     body={item.text}
