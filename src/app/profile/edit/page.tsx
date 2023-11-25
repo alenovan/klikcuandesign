@@ -22,7 +22,7 @@ export default function EditProfile() {
                 <Stack>
 
 
-                    <Text fontFamily="Poppins" fontWeight={"medium"} color={"#1D1D1D"} mt={"30px"}>
+                    <Text fontFamily="Poppins" fontWeight={"medium"} color={"#1D1D1D"} mt={"20px"}>
                         Nama Lengkap
                     </Text>
                     <FormControl id='nama-lengkap' >
