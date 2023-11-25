@@ -57,7 +57,7 @@ export default function PenarikanHistoryDetail() {
                     </Center>
                 </Flex>
                 <Divider mt={5} mb={5} />
-                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"}>Bukti Pembayaran</Text>
+                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"} mb={"10px"}>Bukti Pembayaran</Text>
                 <div className="bg-[#F2F2F2] rounded-2xl py-[14px] px-4 border border-spacing-1 border-dashed border-[#919999] text-center text-[#6D6B6E] flex items-center gap-3">
                     <AppIcon src={"image-file"} color={"black"} mr={"10px"} />
                     <span className="flex-1 text-left text-sm">Bukti Pembayaran_1</span>
