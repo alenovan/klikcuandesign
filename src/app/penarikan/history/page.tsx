@@ -2,20 +2,24 @@
 
 import AppIcon from "@/components/AppIcon";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
-import { Box, Center, Divider, Flex, HStack, Stack, Text, TabPanel, TabPanels } from "@chakra-ui/react";
+import { Box, Center, Divider, Flex, HStack, Stack, Text, Image } from "@chakra-ui/react";
 
 export default function PenarikanHistory() {
 
     const data = [
         {
-            icon: "https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2Fimage%2033.png?alt=media&token=b684c476-3c31-4d65-a414-dbcf461b3d0d",
-            norek: "52718058493",
-            nama: "Andi Sufjan",
+            icon: "https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2FGroup%2012336.png?alt=media&token=d879c3d5-7d43-46a9-aaf6-a6bfa610ac69",
+            name: "Transaksi Sukses",
+            status: "Belum Transfer",
+            data: "20/10/2023 | 20.00 PM",
+            price: 500
         },
         {
-            icon: "https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2Fimage%2033.png?alt=media&token=b684c476-3c31-4d65-a414-dbcf461b3d0d",
-            norek: "75982372394",
-            nama: "Anna S.",
+            icon: "https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2FGroup%2012336.png?alt=media&token=d879c3d5-7d43-46a9-aaf6-a6bfa610ac69",
+            name: "Transaksi Gagal",
+            data: "20/10/2023 | 19.00 PM",
+            status: "Gagal",
+            price: 500
         },
 
     ]
@@ -169,6 +173,54 @@ export default function PenarikanHistory() {
                         </Flex>
                     </Box>
                 </HStack>
+                <Box h={"20px"} />
+                {data?.map((item, i) => (
+                    <>
+                        <Box
+                            mb={"20px"}
+                            backgroundColor="white"
+                            borderRadius="10px"
+                            boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
+                            px={5}
+                            py="10px"
+                        >
+                            <Stack>
+                                <Flex justifyContent="space-between">
+                                    <Flex>
+                                        <Image
+                                            src={item.icon}
+                                            alt={``}
+                                            h={"46px"}
+                                            mx='auto'
+                                        />
+                                        <Stack ms={4} gap={1}>
+                                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25  "}>{item.name} </Text>
+                                            <Text fontFamily="Poppins" fontWeight={"light"} color={"#898989"} mt={2}>{item.data}</Text>
+                                        </Stack>
+                                    </Flex>
+                                    <Stack ms={4} gap={1} textAlign={"right"}>
+                                        <Box
+                                            as='span'
+                                            display='inline-block'
+                                            py={1}
+                                            px={2}
+                                            fontFamily="Poppins" fontWeight={"semibold"}
+                                            borderRadius={10}
+                                            bg={item.status === "Belum Transfer" ? '#FFE9E2' : '#FFE3E3'}
+                                            fontSize='xs'
+                                            color={item.status === "Belum Transfer" ? '#F7971E' : '#F74040'}>
+                                            {item.status}
+                                        </Box>
+                                        <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"} mt={2}>Rp 500</Text>
+                                    </Stack>
+                                </Flex>
+
+
+                            </Stack>
+                        </Box>
+                    </>
+                ))}
+
             </Stack>
         </DashboardLayout>
     );

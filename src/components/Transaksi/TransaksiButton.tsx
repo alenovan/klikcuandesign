@@ -1,8 +1,4 @@
-import { Box, Center, Container, Divider, Flex, Stack, Text } from "@chakra-ui/react";
-import { useContext } from "react";
-import FloatingFooter from "../FloatingFooter";
-import AppIcon from "../AppIcon";
-import { HiChevronRight } from "react-icons/hi";
+import { Box, Text } from "@chakra-ui/react";
 
 const TransaksiButton = () => {
 

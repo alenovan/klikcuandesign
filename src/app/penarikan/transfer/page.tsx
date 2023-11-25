@@ -8,14 +8,26 @@ import { Input, InputGroup, InputLeftElement, HStack, Text, Stack, Box, Flex, Im
 export default function TransferWd() {
     const [number, setNumber] = useState('');
     const handleNumberChange = (event: any) => {
-        // Remove non-numeric characters
-        const sanitizedValue = event.target.value.replace(/[^0-9]/g, '');
+        const rawValue = event.target.value;
+        const sanitizedValue = rawValue.replace(/[^0-9]/g, ''); // Remove non-numeric characters
 
-        // Format the number with commas
-        const formattedValue = Number(sanitizedValue).toLocaleString();
+        // Check if the sanitized value is not empty
+        if (sanitizedValue !== '') {
+            const numericValue = parseInt(sanitizedValue, 10);
 
-        // Update the state with the formatted number
-        setNumber(formattedValue);
+            // Check if the parsed value is a valid number
+            if (!isNaN(numericValue)) {
+                const formattedValue = numericValue.toLocaleString();
+                const valueWithDot = formattedValue.replace(/,/g, '.'); // Replace commas with dots
+                setNumber(valueWithDot);
+            } else {
+                // Handle the case where the input is not a valid number
+                setNumber('');
+            }
+        } else {
+            // Handle the case where the input is empty
+            setNumber('');
+        }
     };
 
 
@@ -75,7 +87,7 @@ export default function TransferWd() {
                     <HStack>
                         <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"} fontSize={"15px"}>Rp </Text>
                         <Input
-                            type="number"
+                            type="text"
                             placeholder=""
                             fontFamily="Poppins"
                             value={number}
@@ -83,6 +95,9 @@ export default function TransferWd() {
                             _focus={{ borderColor: 'transparent' }}
                             ps={"0"}
                             fontWeight={"semibold"}
+                            _focusVisible={{
+                                outline: "none"
+                            }}
                             color={"#00AA12"}
                             onChange={handleNumberChange}
                         />
