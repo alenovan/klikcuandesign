@@ -31,7 +31,7 @@ export default function MisiSubDetail() {
                 showBackButton: true,
                 title: "Detaill Misi"
             }}>
-            <Container>
+            <Container px="10px">
                 <Box mt={"20px"}>
                     <HStack alignItems="flex-start">
                         <Image
