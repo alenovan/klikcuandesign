@@ -74,7 +74,7 @@ const PlatformListList = (props: PlatformListListProps) => {
                     <GridItem key={""}>
                         <PlatformlListItemItem
                             icon={item.icon}
-                            link={``}
+                            link={`misi/` + item.title}
                             title={item.title}
                         />
                     </GridItem>

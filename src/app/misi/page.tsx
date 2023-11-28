@@ -21,7 +21,7 @@ export default function Misi() {
       }}>
       <Container>
 
-        <PlatformMission title={"Instagram"} icon={"https://vrlzr-be.promosindo.web.id/uploads/platforms/1688800923.png"} mission={"6"} link={""} banner={"1"} platfrom={""} />
+        <PlatformMission title={"Instagram"} icon={"https://vrlzr-be.promosindo.web.id/uploads/platforms/1688800923.png"} mission={"6"} link={`misi/Instagram`} banner={"1"} platfrom={""} />
 
       </Container>
     </DashboardLayout>

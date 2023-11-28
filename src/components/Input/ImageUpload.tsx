@@ -1,12 +1,14 @@
-"use client";
-import { Alert, AlertDescription } from "@/components/Alert";
 import React, { useCallback, useState } from "react";
+import { ChakraProvider, Modal, ModalOverlay, ModalContent, Box, Center, Image, Stack, Text } from "@chakra-ui/react";
+import AppIcon from "../AppIcon";
+import { Alert, AlertDescription } from "@/components/Alert";
 
 const MAX_FILE_SIZE_MB = 2;
 
 const ImageUpload = () => {
   const [isMaxFileSize, setIsMaxFileSize] = useState(false);
   const [fileToUpload, setFileToUpload] = useState<File | undefined>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,39 +24,86 @@ const ImageUpload = () => {
     []
   );
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       {fileToUpload ? (
+        <ChakraProvider>
+          <Modal isOpen={isModalOpen} onClose={closeModal} size="lg">
+            <ModalOverlay />
+            <ModalContent backgroundColor="transparent">
+              <Box
+                cursor={"pointer"}
+                style={{
+                  position: 'absolute',
+                  top: "10px",
+                  right: "10px",
+                  zIndex: 1,
+                }}
+                onClick={closeModal}
+              >
+                <AppIcon src="cross-white" color="black" />
+              </Box>
+              <Box
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: "20px",
+                }}
+              >
+                <Stack spacing={2} direction="column" align="center">
+                  <Center>
+                    <Image src={URL.createObjectURL(fileToUpload)} alt="Uploaded Image" />
+                  </Center>
+                </Stack>
+              </Box>
+            </ModalContent>
+          </Modal>
+        </ChakraProvider>
+      ) : null}
+
+      {fileToUpload ? (
         <div className="bg-[#F2F2F2] rounded-2xl py-[14px] px-4 border border-spacing-1 border-dashed border-[#919999] text-center text-[#6D6B6E] flex items-center gap-3">
-          <img src="./assets/images/image-file.svg" alt="icon" />
-          <span className="flex-1 text-left text-sm">{fileToUpload.name}</span>
+          <AppIcon src={"image-file"} color={"black"} />
+          <span className="flex-1 text-left text-sm">
+            {fileToUpload.name}
+            <span onClick={openModal}>
+              <Text cursor="pointer" fontFamily="Poppins" fontWeight={"italic"} fontStyle={"italic"} color={"#00AA12"}>
+                Lihat
+              </Text>
+            </span>
+          </span>
           <span
             className="cursor-pointer"
             onClick={() => {
               setFileToUpload(undefined);
             }}
           >
-            <img src="./assets/images/x-icon.svg" alt="x-icon" />
+            <AppIcon src={"cross"} color={"black"} />
           </span>
         </div>
       ) : (
         <>
-          <input
-            type="file"
-            accept="image/*"
-            hidden
-            id="image-upload"
-            onChange={handleChange}
-          />
+          <input type="file" accept="image/*" hidden id="image-upload" onChange={handleChange} />
           <label htmlFor="image-upload">
             <div className="bg-[#F2F2F2] rounded-2xl p-7 border border-spacing-1 border-dashed border-[#919999] text-center text-[#6D6B6E]">
-              <img
-                src="./assets/images/upload-file.svg"
-                alt="Icon upload"
-                className="mx-auto mb-3"
-              />
-              <p>Unggah foto rekening</p>
-              <p>max {MAX_FILE_SIZE_MB} MB </p>
+              <Center mb={1}>
+                <AppIcon src={"upload-file"} color={"black"} />
+              </Center>
+              <Text fontFamily="Poppins" fontWeight={"regular"} color={"#6D6B6E"} mt={2}>
+                Unggah foto screenshot
+              </Text>
+              <Text fontFamily="Poppins" fontWeight={"regular"} color={"#6D6B6E"} mt={2}>
+                max {MAX_FILE_SIZE_MB} MB
+              </Text>
             </div>
           </label>
         </>
