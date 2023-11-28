@@ -4,7 +4,7 @@ import ImageUpload from "@/components/Input/ImageUpload";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import MisiList from "@/components/Misi/MisiList";
 import AddNewBankAccountForm from "@/modules/AddNewBankAccountForm";
-import { Box, Center, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Container, Image, HStack, Stack, Divider, Accordion, AccordionItem, AccordionIcon, AccordionButton, AccordionPanel } from '@chakra-ui/react';
+import { Box, Center, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Container, Image, HStack, Stack, Divider, Accordion, AccordionItem, AccordionIcon, AccordionButton, AccordionPanel, FormControl, Input } from '@chakra-ui/react';
 import { useState } from "react";
 export default function MisiSubDetail() {
     const [activeTab, setActiveTab] = useState(0)
@@ -110,7 +110,20 @@ export default function MisiSubDetail() {
                 <Text fontFamily="Poppins" fontWeight={"medium"} color={"#1D1D1D"} mt={"20px"}>Username Instagrammu</Text>
                 <Text fontFamily="Poppins" fontWeight={"regular"} color={"#6D6B6E"} mt={"10px"}>Tulis username instagram yang digunakan untuk mengikuti akun tertera</Text>
 
-
+                <FormControl id='username' mt={"10px"}>
+                    <Input
+                        borderRadius={"10px"}
+                        placeholder=' '
+                        type='text'
+                        bg='#F2F2F2'
+                        fontSize={"13px"}
+                        fontFamily='Poppins'
+                        fontWeight='medium'
+                        color='#1D1D1D'
+                        h={"50px"}
+                        onChange={(e) => { }}
+                    />
+                </FormControl>
                 <Text fontFamily="Poppins" fontWeight={"medium"} color={"#1D1D1D"} mt={"20px"}>Screenshot Profil Instagrammu</Text>
                 <Box my={"15px"}>
                     <ImageUpload key={"A"} />
