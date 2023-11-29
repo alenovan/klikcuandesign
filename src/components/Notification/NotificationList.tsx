@@ -49,34 +49,32 @@ const NotificationList = () => {
     return (
         <Container mt={5}>
             {data?.map((item, i) => (
-                <Stack mb={"25px"}>
+                <Stack mb={"25px"} key={i}>
                     <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"} mb={2}>{item.time}</Text>
                     {item.data?.map((detail, i) => (
-                        <>
-                            <Box
-                                backgroundColor="white"
-                                borderRadius="10px"
-                                boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
-                                px={5}
-                                py="10px"
-                            >
-                                <Stack>
-                                    <HStack gap={5}>
-                                        <Image
-                                            src={detail.icon ?? ""}
-                                            alt={`${detail.icon} `}
-                                        />
-                                        <Stack gap={1}>
-                                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>{detail.title} </Text>
-                                            <Text fontFamily="Poppins" color={"#4A4A4A"}>{detail.body}</Text>
-                                            <Text fontFamily="Poppins" fontWeight={"light"} color={"#898989"}>{detail.time}</Text>
-                                        </Stack>
-                                    </HStack>
+                        <Box
+                            key={i}
+                            backgroundColor="white"
+                            borderRadius="10px"
+                            boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
+                            px={5}
+                            py="10px"
+                        >
+                            <Stack>
+                                <HStack gap={5}>
+                                    <Image
+                                        src={detail.icon ?? ""}
+                                        alt={`${detail.icon} `}
+                                    />
+                                    <Stack gap={1}>
+                                        <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>{detail.title} </Text>
+                                        <Text fontFamily="Poppins" color={"#4A4A4A"}>{detail.body}</Text>
+                                        <Text fontFamily="Poppins" fontWeight={"light"} color={"#898989"}>{detail.time}</Text>
+                                    </Stack>
+                                </HStack>
 
-                                </Stack>
-                            </Box>
-
-                        </>
+                            </Stack>
+                        </Box>
                     ))}
 
 

@@ -29,7 +29,7 @@ const MisiListSampingan = () => {
     return (
         <Stack mt={"10px"}>
             {data?.map((item, i) => (
-                <Link href={{
+                <Link key={i} href={{
                     pathname: "Instagram/validasi/" + item.id,
                 }}
                     passHref>

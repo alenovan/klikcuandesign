@@ -66,7 +66,7 @@ const TransaksiList = (props: TransaksiListProps) => {
     return (
         <Box mb={20}>
             {data?.map((item, i) => (
-                <Stack mb={"25px"} cursor={"pointer"}>
+                <Stack mb={"25px"} cursor={"pointer"} key={i}>
                     <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"} mb={2}>{item.time}</Text>
                     {item.data?.map((detail, i) => (
                         <>

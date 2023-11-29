@@ -31,7 +31,7 @@ const MisiList = () => {
     return (
         <Stack mt={"10px"}>
             {data?.map((item, i) => (
-                <Link href={{
+                <Link key={i} href={{
                     pathname: "Instagram/" + item.id,
                 }}
                     passHref>
