@@ -14,9 +14,11 @@ const HomeNews = () => {
                         Baca Artikel
                     </Text>
                     <Flex mr={"10px"}>
-                        <Text fontWeight='medium' fontFamily="Poppins" fontSize='12px' color={"#6D6B6E"} mr={"5px"}>
-                            Lihat Semua
-                        </Text>
+                        <Link passHref href={"/artikel"}>
+                            <Text fontWeight='medium' fontFamily="Poppins" fontSize='12px' color={"#6D6B6E"} mr={"5px"}>
+                                Lihat Semua
+                            </Text>
+                        </Link>
                         <AppIcon src={"chevron-right"} color={"black"} />
                     </Flex>
                 </Flex>

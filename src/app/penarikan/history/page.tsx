@@ -3,6 +3,7 @@
 import AppIcon from "@/components/AppIcon";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import { Box, Center, Divider, Flex, HStack, Stack, Text, Image } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function PenarikanHistory() {
 
@@ -176,52 +177,54 @@ export default function PenarikanHistory() {
                 <Box h={"20px"} />
                 {data?.map((item, i) => (
                     <>
-                        <Box
-                            mb={"20px"}
-                            backgroundColor="white"
-                            borderRadius="10px"
-                            boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
-                            px={5}
-                            py="10px"
-                        >
-                            <Stack>
-                                <Flex justifyContent="space-between">
-                                    <Flex>
-                                        <Image
-                                            src={item.icon}
-                                            alt={``}
-                                            h={"46px"}
-                                            mx='auto'
-                                        />
-                                        <Stack ms={4} gap={1}>
-                                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25  "}>{item.name} </Text>
-                                            <Text fontFamily="Poppins" fontWeight={"light"} color={"#898989"} mt={2}>{item.data}</Text>
+                        <Link passHref href={"/penarikan/history/" + item.name}>
+                            <Box
+                                mb={"20px"}
+                                backgroundColor="white"
+                                borderRadius="10px"
+                                boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
+                                px={5}
+                                py="10px"
+                            >
+                                <Stack>
+                                    <Flex justifyContent="space-between">
+                                        <Flex>
+                                            <Image
+                                                src={item.icon}
+                                                alt={``}
+                                                h={"46px"}
+                                                mx='auto'
+                                            />
+                                            <Stack ms={4} gap={1}>
+                                                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25  "}>{item.name} </Text>
+                                                <Text fontFamily="Poppins" fontWeight={"light"} color={"#898989"} mt={2}>{item.data}</Text>
+                                            </Stack>
+                                        </Flex>
+                                        <Stack gap={1} textAlign={"right"}>
+                                            <Box
+                                                as='span'
+                                                display='inline-block'
+                                                py={1}
+                                                px={2}
+                                                fontFamily="Poppins" fontWeight={"semibold"}
+                                                borderRadius={10}
+                                                bg={item.status === "Belum Transfer" ? '#FFE9E2' : '#FFE3E3'}
+                                                fontSize='xs'
+                                                color={item.status === "Belum Transfer" ? '#F7971E' : '#F74040'}>
+                                                {item.status}
+                                            </Box>
+                                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"} mt={2}>Rp 500</Text>
                                         </Stack>
                                     </Flex>
-                                    <Stack ms={4} gap={1} textAlign={"right"}>
-                                        <Box
-                                            as='span'
-                                            display='inline-block'
-                                            py={1}
-                                            px={2}
-                                            fontFamily="Poppins" fontWeight={"semibold"}
-                                            borderRadius={10}
-                                            bg={item.status === "Belum Transfer" ? '#FFE9E2' : '#FFE3E3'}
-                                            fontSize='xs'
-                                            color={item.status === "Belum Transfer" ? '#F7971E' : '#F74040'}>
-                                            {item.status}
-                                        </Box>
-                                        <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"} mt={2}>Rp 500</Text>
-                                    </Stack>
-                                </Flex>
 
 
-                            </Stack>
-                        </Box>
+                                </Stack>
+                            </Box>
+                        </Link>
                     </>
                 ))}
 
-            </Stack>
+            </Stack >
         </DashboardLayout>
     );
 }

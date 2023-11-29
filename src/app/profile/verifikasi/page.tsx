@@ -4,7 +4,7 @@ import AppIcon from "@/components/AppIcon";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import VerifikasiButton from "@/components/Verifikasi/VerifikasiButton";
 import { Stack, Text, Container, Flex, HStack, Box, FormControl, Input } from "@chakra-ui/react";
-
+import Link from "next/link";
 export default function Verifikasi() {
 
     return (
@@ -68,7 +68,9 @@ export default function Verifikasi() {
                     </FormControl>
 
                 </HStack>
-                <VerifikasiButton text="Kirim Kode OTP" />
+                <Link passHref href={"/profile/verifikasi/otp"}>
+                    <VerifikasiButton text="Kirim Kode OTP" />
+                </Link>
             </Container>
         </DashboardLayout>
     );

@@ -3,7 +3,7 @@
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import TransaksiDetail from "@/components/Transaksi/TransaksiDetail";
 import TransaksiDetailItem from "@/components/Transaksi/TransaksiDetailItem";
-
+import Link from "next/link";
 
 const DetailTransaksi = () => {
 

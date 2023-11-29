@@ -1,6 +1,7 @@
 import AppIcon from "@/components/AppIcon";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import { Box, Center, Divider, Flex, HStack, Stack, Text, Image } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function Penarikan() {
 
@@ -75,56 +76,58 @@ export default function Penarikan() {
                 </Text>
                 <Box h={"15px"} />
                 {data?.map((item, i) => (
-
                     <>
-                        <Box
-                            key={i}
-                            backgroundColor="white"
-                            borderRadius="10px"
-                            boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
-                            px={5}
-                            mb={"20px"}
-                            py="10px"
-                        >
-                            <Flex justifyContent="space-between" >
-                                <HStack gap={5}>
-                                    <Image
-                                        src={"https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2Fimage%2033.png?alt=media&token=b684c476-3c31-4d65-a414-dbcf461b3d0d"}
-                                        alt={``}
-                                        maxWidth='35%'
-                                        mx='auto'
-                                    />
-                                    <Stack gap={1}>
-                                        <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>{item.norek} </Text>
-                                        <Text fontFamily="Poppins" fontWeight={"regular"} color={"#4A4A4A"}>  {item.nama}</Text>
-                                    </Stack>
-                                </HStack>
-                                <AppIcon src={"chevron-right-black"} color={"black"} />
-                            </Flex>
-                        </Box>
+                        <Link passHref href={"/penarikan/transfer"}>
+                            <Box
+                                key={i}
+                                backgroundColor="white"
+                                borderRadius="10px"
+                                boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
+                                px={5}
+                                mb={"20px"}
+                                py="10px"
+                            >
+                                <Flex justifyContent="space-between" >
+                                    <HStack gap={5}>
+                                        <Image
+                                            src={"https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2Fimage%2033.png?alt=media&token=b684c476-3c31-4d65-a414-dbcf461b3d0d"}
+                                            alt={``}
+                                            maxWidth='35%'
+                                            mx='auto'
+                                        />
+                                        <Stack gap={1}>
+                                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>{item.norek} </Text>
+                                            <Text fontFamily="Poppins" fontWeight={"regular"} color={"#4A4A4A"}>  {item.nama}</Text>
+                                        </Stack>
+                                    </HStack>
+                                    <AppIcon src={"chevron-right-black"} color={"black"} />
+                                </Flex>
+                            </Box>
+                        </Link>
                     </>
                 ))}
-                <Box
-                    borderRadius="20px"
-                    color="#6D6B6E"
-                    border="2px solid rgba(60, 60, 67, 0.30)"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    w="100%"
-                    h="45px"
-                    cursor="pointer"
-                    _hover={{
-                        bg: "white",
-                        color: "black",
-                    }}
-                >
-                    <AppIcon src={"penarikan/plus"} color={"black"} />
-                    <Text fontFamily="Poppins" fontWeight="medium" fontSize="13px">
-                        Tambah Rekening Baru
-                    </Text>
-                </Box>
-
+                <Link passHref href={"/rekening"}>
+                    <Box
+                        borderRadius="20px"
+                        color="#6D6B6E"
+                        border="2px solid rgba(60, 60, 67, 0.30)"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        w="100%"
+                        h="45px"
+                        cursor="pointer"
+                        _hover={{
+                            bg: "white",
+                            color: "black",
+                        }}
+                    >
+                        <AppIcon src={"penarikan/plus"} color={"black"} />
+                        <Text fontFamily="Poppins" fontWeight="medium" fontSize="13px">
+                            Tambah Rekening Baru
+                        </Text>
+                    </Box>
+                </Link>
             </Stack>
         </DashboardLayout>
     );

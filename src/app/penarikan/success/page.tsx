@@ -3,6 +3,7 @@
 import AppIcon from "@/components/AppIcon";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 
 const WdSuccess = () => {
@@ -26,10 +27,12 @@ const WdSuccess = () => {
                 </p>
             </div>
             <div className=" text-black w-full px-4 py-4   mb-8 rounded-5">
-                <Box background={"white"} borderRadius={"12px"} padding={"17px"} cursor={"pointer"}>
-                    <Center>
-                        <Text color={"#1D1D1D"} fontWeight={"semibold"} fontFamily={"Poppins"}>Lihat Rangkuman Pembayaran</Text></Center>
-                </Box>
+                <Link passHref href={"/penarikan/history"}>
+                    <Box background={"white"} borderRadius={"12px"} padding={"17px"} cursor={"pointer"}>
+                        <Center>
+                            <Text color={"#1D1D1D"} fontWeight={"semibold"} fontFamily={"Poppins"}>Lihat Rangkuman Pembayaran</Text></Center>
+                    </Box>
+                </Link>
             </div>
 
             <span className="bg-white w-56 h-56 rounded-full absolute -bottom-24 -left-32 inline-block opacity-40" />

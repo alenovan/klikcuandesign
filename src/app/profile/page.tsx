@@ -1,7 +1,7 @@
 import AppIcon from "@/components/AppIcon";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import { Box, Center, Flex, HStack, Stack, Text } from "@chakra-ui/react";
-
+import Link from "next/link";
 export default function Profile() {
     return (
         <DashboardLayout
@@ -36,62 +36,74 @@ export default function Profile() {
                     <Flex justifyContent="space-between">
                         <HStack gap={5}>
                             <AppIcon src={"profile/photo"} color={"black"} />
-                            <Stack gap={1}>
+                            <Stack gap={2}>
                                 <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#FFFFFF"}>
                                     Andi S.
                                 </Text>
                                 <Text fontFamily="Poppins" color={"#FFFFFF"}>
                                     andi.s@gmail.com
                                 </Text>
+                                <Link passHref href={"/profile/verifikasi"}>
+                                    <HStack cursor={"pointer"}>
+                                        <AppIcon src={"optsecure"} color={"black"} cursor="pointer" mt="1px" />
+                                        <Text fontFamily="Poppins" color={"#FFFFFF"}>
+                                            Verifikasi Nomor HP
+                                        </Text>
+                                        <AppIcon src={"chevron-right-white"} color={"black"} cursor="pointer" mt="1px" />
+                                    </HStack>
+                                </Link>
                             </Stack>
                         </HStack>
                         <Center>
-                            <Box
-                                borderRadius="20px"
-                                color={"white"}
-                                background="rgba(255, 255, 255, 0.82)"
-                                display="flex"
-                                w={"70px"}
-                                h={"35px"}
-                                alignItems="center"
-                                justifyContent="center"
-                                textAlign={"center"}
-                                cursor="pointer"
-                                _hover={{
-                                    bg: "gray.100",
-                                    color: "black"
-                                }}
-                            >
-                                <Text fontFamily="Poppins" textAlign="center" fontWeight="medium" fontSize="13px" color="#00AA12" mr={"5px"}>
-                                    Edit
-                                </Text>
-                                <AppIcon src={"profile/edit"} color={"black"} />
-                            </Box>
-
+                            <Link passHref href={"/profile/edit"}>
+                                <Box
+                                    borderRadius="20px"
+                                    color={"white"}
+                                    background="rgba(255, 255, 255, 0.82)"
+                                    display="flex"
+                                    w={"70px"}
+                                    h={"35px"}
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    textAlign={"center"}
+                                    cursor="pointer"
+                                    _hover={{
+                                        bg: "gray.100",
+                                        color: "black"
+                                    }}
+                                >
+                                    <Text fontFamily="Poppins" textAlign="center" fontWeight="medium" fontSize="13px" color="#00AA12" mr={"5px"}>
+                                        Edit
+                                    </Text>
+                                    <AppIcon src={"profile/edit"} color={"black"} />
+                                </Box>
+                            </Link>
                         </Center>
 
                     </Flex>
                 </Box>
 
-                <Box
-                    mb={"20px"}
-                    backgroundColor="white"
-                    borderRadius="18px"
-                    boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
-                    px={5}
-                    py="10px"
-                >
-                    <Flex justifyContent="space-between" >
-                        <HStack gap={5}>
-                            <AppIcon src={"profile/rekening"} color={"black"} />
-                            <Stack gap={1}>
-                                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"}>Rekening </Text>
-                            </Stack>
-                        </HStack>
-                        <AppIcon src={"profile/chevronright-primary"} color={"black"} />
-                    </Flex>
-                </Box>
-
+                <Link passHref href={"/profile/edit"}>
+                    <Box
+                        cursor={"pointer"}
+                        mb={"20px"}
+                        backgroundColor="white"
+                        borderRadius="18px"
+                        boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
+                        px={5}
+                        py="10px"
+                    >
+                        <Flex justifyContent="space-between" >
+                            <HStack gap={5}>
+                                <AppIcon src={"profile/rekening"} color={"black"} />
+                                <Stack gap={1}>
+                                    <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"}>Rekening </Text>
+                                </Stack>
+                            </HStack>
+                            <AppIcon src={"profile/chevronright-primary"} color={"black"} />
+                        </Flex>
+                    </Box>
+                </Link>
                 <Box
                     backgroundColor="white"
                     borderRadius="18px"

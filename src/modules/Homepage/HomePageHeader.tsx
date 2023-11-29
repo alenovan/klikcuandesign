@@ -1,5 +1,6 @@
 import FloatingNotif from "@/components/FloatingNotif";
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import React from "react";
 
 const HomePageHeader = () => {
@@ -12,7 +13,9 @@ const HomePageHeader = () => {
 
           </Box>
           <span className="absolute top-4 right-4">
-            <FloatingNotif />
+            <Link passHref href={"/notification"}>
+              <FloatingNotif />
+            </Link>
           </span>
         </Flex>
         <Box mt={10}>

@@ -6,6 +6,7 @@ import {
     HStack
 } from "@chakra-ui/react";
 import AppIcon from "../AppIcon";
+import Link from "next/link";
 
 type RekeningListProps = {
 };
@@ -27,34 +28,35 @@ const RekeningList = (props: RekeningListProps) => {
             <Stack>
                 {data?.map((item, i) => (
                     <>
-                        <Box
-                            cursor={"pointer"}
-                            backgroundColor="white"
-                            borderRadius="10px"
-                            boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
-                            px={5}
-                            py="20px"
-                        >
-                            <HStack justifyContent="space-between">
-                                <HStack>
-                                    <Image
-                                        src={item.icon ?? ""}
-                                        alt={`${item.icon} `}
-                                        maxWidth='100%'
-                                        mx='auto'
-                                    />
-                                    <Stack ms={4} gap={0}>
-                                        <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>{item.norek ?? ""} </Text>
-                                        <Text fontFamily="Poppins" fontWeight={"light"} color={"#4A4A4A"} >{item.nama ?? ""}</Text>
+                        <Link passHref href={"/rekening/" + item.nama}>
+                            <Box
+                                cursor={"pointer"}
+                                backgroundColor="white"
+                                borderRadius="10px"
+                                boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
+                                px={5}
+                                py="20px"
+                            >
+                                <HStack justifyContent="space-between">
+                                    <HStack>
+                                        <Image
+                                            src={item.icon ?? ""}
+                                            alt={`${item.icon} `}
+                                            maxWidth='100%'
+                                            mx='auto'
+                                        />
+                                        <Stack ms={4} gap={0}>
+                                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>{item.norek ?? ""} </Text>
+                                            <Text fontFamily="Poppins" fontWeight={"light"} color={"#4A4A4A"} >{item.nama ?? ""}</Text>
+                                        </Stack>
+                                    </HStack>
+                                    <Stack textAlign={"right"}>
+                                        <AppIcon src={"chevron-right-black"} color={"black"} />
+
                                     </Stack>
                                 </HStack>
-                                <Stack textAlign={"right"}>
-                                    <AppIcon src={"chevron-right-black"} color={"black"} />
-
-                                </Stack>
-                            </HStack>
-                        </Box>
-
+                            </Box>
+                        </Link>
                     </>
 
                 ))}

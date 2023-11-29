@@ -1,11 +1,13 @@
 import { Box, Flex, HStack, Text } from "@chakra-ui/react";
 import AppIcon from "../AppIcon";
+import Link from "next/link";
 
 const RekeningButtonAdd = () => {
 
     return (
         <div className="fixed z-20 bottom-0 left-0 w-full bg-white px-3 ">
             <div className="container">
+
                 <Box
                     borderRadius="15px"
                     py={"15px"}
@@ -22,15 +24,18 @@ const RekeningButtonAdd = () => {
                         fontcolor: "black"
                     }}
                 >
-                    <Flex>
-                        <AppIcon src={"plus 1"} color={"black"} />
-                        <Text fontFamily="Poppins" textAlign="center" w="100%" fontWeight="medium" fontSize="13px" color="white" mt={"3px"}>
-                            Tambah Rekening Baru
-                        </Text>
-                    </Flex>
+                    <Link passHref href={"/rekening/tambah"}>
+                        <Flex>
+                            <AppIcon src={"plus 1"} color={"black"} />
+                            <Text fontFamily="Poppins" textAlign="center" w="100%" fontWeight="medium" fontSize="13px" color="white" mt={"3px"}>
+                                Tambah Rekening Baru
+                            </Text>
+                        </Flex>
+                    </Link>
                 </Box>
+
             </div>
-        </div>
+        </div >
 
     );
 };

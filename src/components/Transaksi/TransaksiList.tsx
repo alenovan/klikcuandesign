@@ -6,6 +6,7 @@ import {
     Divider,
     HStack
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 type TransaksiListProps = {
 };
@@ -65,86 +66,91 @@ const TransaksiList = (props: TransaksiListProps) => {
     return (
         <Box mb={20}>
             {data?.map((item, i) => (
-                <Stack mb={"25px"}>
+                <Stack mb={"25px"} cursor={"pointer"}>
                     <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"} mb={2}>{item.time}</Text>
                     {item.data?.map((detail, i) => (
                         <>
-                            <Box
-                                backgroundColor="white"
-                                borderRadius="10px"
-                                boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
-                                px={5}
-                                py="10px"
-                            >
-                                <Stack>
-                                    <Flex justifyContent="space-between">
-                                        <Flex>
-                                            <Box
-                                                width='56px'
-                                                height='56px'
-                                                backgroundColor='rgba(0, 170, 18, 0.09)'
-                                                padding='16px'
-                                                borderRadius='16px'
-                                                display='inline-flex'
-                                                boxShadow='0px 5px 10px rgba(56, 89, 147, 0.05)'
-                                                mx='auto'
-                                                mb={2}>
-                                                <Image
-                                                    src={detail.icon ?? ""}
-                                                    alt={`${detail.icon} `}
-                                                    maxWidth='100%'
+                            <Link passHref href={"/transaksi/1"}>
+                                <Box
+                                    backgroundColor="white"
+                                    borderRadius="10px"
+                                    boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
+                                    px={5}
+                                    py="10px"
+                                >
+                                    <Stack>
+                                        <Flex justifyContent="space-between">
+                                            <Flex>
+                                                <Box
+                                                    width='56px'
+                                                    height='56px'
+                                                    backgroundColor='rgba(0, 170, 18, 0.09)'
+                                                    padding='16px'
+                                                    borderRadius='16px'
+                                                    display='inline-flex'
+                                                    boxShadow='0px 5px 10px rgba(56, 89, 147, 0.05)'
                                                     mx='auto'
-                                                />
-                                            </Box>
-                                            <Stack ms={4} gap={0}>
-                                                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>Username follow </Text>
-                                                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>@makana</Text>
-                                                <Text fontFamily="Poppins" fontWeight={"light"} color={"#4A4A4A"} mt={2}>ID 12426172</Text>
+                                                    mb={2}>
+                                                    <Image
+                                                        src={detail.icon ?? ""}
+                                                        alt={`${detail.icon} `}
+                                                        maxWidth='100%'
+                                                        mx='auto'
+                                                    />
+                                                </Box>
+                                                <Stack ms={4} gap={0}>
+                                                    <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>Username follow </Text>
+                                                    <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>@makana</Text>
+                                                    <Text fontFamily="Poppins" fontWeight={"light"} color={"#4A4A4A"} mt={2}>ID 12426172</Text>
+                                                </Stack>
+                                            </Flex>
+                                            <Stack textAlign={"right"}>
+                                                <Text color={"#898989"} fontFamily="Poppins">20.00 PM</Text>
+                                                <Box
+                                                    as='span'
+                                                    display='inline-block'
+                                                    py={1}
+                                                    px={2}
+                                                    fontFamily="Poppins" fontWeight={"semibold"}
+                                                    borderRadius={10}
+                                                    bg={detail.status === "COMPLETED" ? 'rgba(67, 214, 160, 0.21)' : 'rgba(255, 120, 77, 0.16)'}
+                                                    fontSize='xs'
+                                                    color={detail.status === "COMPLETED" ? '#079D49' : '#F7971E'}>
+                                                    {detail.status === "COMPLETED" ? 'Sukses' : 'Menunggu'}
+                                                </Box>
                                             </Stack>
                                         </Flex>
-                                        <Stack textAlign={"right"}>
-                                            <Text color={"#898989"} fontFamily="Poppins">20.00 PM</Text>
-                                            <Box
-                                                as='span'
-                                                display='inline-block'
-                                                py={1}
-                                                px={2}
-                                                fontFamily="Poppins" fontWeight={"semibold"}
-                                                borderRadius={10}
-                                                bg={detail.status === "COMPLETED" ? 'rgba(67, 214, 160, 0.21)' : 'rgba(255, 120, 77, 0.16)'}
-                                                fontSize='xs'
-                                                color={detail.status === "COMPLETED" ? '#079D49' : '#F7971E'}>
-                                                {detail.status === "COMPLETED" ? 'Sukses' : 'Menunggu'}
-                                            </Box>
-                                        </Stack>
-                                    </Flex>
-                                    <Divider />
-                                    <HStack justifyContent="space-between">
-                                        <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"}>Rp 500</Text>
-                                        <Box
-                                            borderRadius="full"
-                                            border="1px"
-                                            px={4}
-                                            py={2}
-                                            borderColor="#00AA12"
-                                            display="flex"
-                                            alignItems="center"
-                                            justifyContent="space-between"
-                                            cursor="pointer"
-                                            _hover={{
-                                                bg: "gray.100",
-                                            }}
-                                        >
-                                            <Text fontFamily="Poppins" fontWeight="medium" fontSize="13px" color="#00AA12" mr={"5px"}>
-                                                Kerjakan Lagi
-                                            </Text>
-                                        </Box>
-                                    </HStack>
+                                        <Divider />
+                                        <HStack justifyContent="space-between">
+                                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"}>Rp 500</Text>
+
+                                            <Link passHref href={"/misi/instagram/1"}>
+                                                {detail.status === "COMPLETED" && <Box
+                                                    borderRadius="full"
+                                                    border="1px"
+                                                    px={4}
+                                                    py={2}
+                                                    borderColor="#00AA12"
+                                                    display="flex"
+                                                    alignItems="center"
+                                                    justifyContent="space-between"
+                                                    cursor="pointer"
+                                                    _hover={{
+                                                        bg: "gray.100",
+                                                    }}
+                                                >
+                                                    <Text fontFamily="Poppins" fontWeight="medium" fontSize="13px" color="#00AA12" mr={"5px"}>
+                                                        Kerjakan Lagi
+                                                    </Text>
+                                                </Box>
+                                                }
+                                            </Link>
+                                        </HStack>
 
 
-                                </Stack>
-                            </Box>
-
+                                    </Stack>
+                                </Box>
+                            </Link>
                         </>
                     ))}
 

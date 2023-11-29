@@ -4,7 +4,7 @@ import AppIcon from "@/components/AppIcon";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import VerifikasiButton from "@/components/Verifikasi/VerifikasiButton";
 import { Stack, Text, Container, Flex, HStack, Box, FormControl, Input, Center } from "@chakra-ui/react";
-
+import Link from "next/link";
 export default function Otp() {
 
     return (
@@ -108,7 +108,7 @@ export default function Otp() {
                 <HStack justifyContent="space-between">
                     <Text fontFamily="Poppins" fontWeight="light" color="#333333" fontSize="15px" mb="10px" mt="30px">
                         Belum dapat kode?
-                        <Text as="span" fontWeight="bold" textColor={"#00AA12"}> Kirim ulang </Text>
+                        <Text as="span" fontWeight="medium" textColor={"#00AA12"}> Kirim ulang </Text>
                     </Text>
                     <HStack >
                         <Center mt="25px">
@@ -119,7 +119,9 @@ export default function Otp() {
                         </Center>
                     </HStack>
                 </HStack>
-                <VerifikasiButton text="Selanjutnya" />
+                <Link passHref href={"/profile/verifikasi/success"}>
+                    <VerifikasiButton text="Selanjutnya" />
+                </Link>
             </Container>
         </DashboardLayout>
     );

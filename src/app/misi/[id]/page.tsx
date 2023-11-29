@@ -1,6 +1,7 @@
 "use client";
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import MisiList from "@/components/Misi/MisiList";
+import MisiListSampingan from "@/components/Misi/MisiListSampingan";
 import { Box, Center, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Container, Image } from '@chakra-ui/react';
 import { useState } from "react";
 export default function MisiDetail() {
@@ -19,7 +20,7 @@ export default function MisiDetail() {
             }}>
             <Container>
                 <Box>
-                    <Center my={"15px"}>
+                    <Center my={"15px"} >
                         <Image src={"https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2FFrame%201000004511.png?alt=media&token=42ee568a-0284-45ed-a20d-0cc688ed0aef"} alt={"test"} />
                     </Center>
                     <Tabs
@@ -40,6 +41,7 @@ export default function MisiDetail() {
                                 <MisiList />
                             </TabPanel>
                             <TabPanel>
+                                <MisiListSampingan />
                             </TabPanel>
                         </TabPanels>
                     </Tabs>

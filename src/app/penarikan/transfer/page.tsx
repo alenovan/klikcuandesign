@@ -3,6 +3,7 @@
 import DashboardLayout from "@/components/Layout/DashboardLayout";
 import { useState } from "react";
 import { Input, InputGroup, InputLeftElement, HStack, Text, Stack, Box, Flex, Image, Center, Divider } from '@chakra-ui/react';
+import Link from "next/link";
 
 
 export default function TransferWd() {
@@ -112,28 +113,30 @@ export default function TransferWd() {
 
                 <div className="fixed z-20 bottom-0 left-0 w-full bg-white px-3 ">
                     <div className="container">
-                        <Box
-                            borderRadius="15px"
-                            py={"15px"}
-                            mb={"15px"}
-                            color={"White"}
-                            background="#00AA12"
-                            display="flex"
-                            alignItems="center"
-                            textAlign={"center"}
-                            cursor="pointer"
-                            justifyContent="center"
-                            _hover={{
-                                bg: "gray.100",
-                                fontcolor: "black"
-                            }}
-                        >
-                            <Flex>
-                                <Text fontFamily="Poppins" textAlign="center" w="100%" fontWeight="medium" fontSize="13px" color="white" mt={"3px"}>
-                                    Transfer
-                                </Text>
-                            </Flex>
-                        </Box>
+                        <Link passHref href={"/penarikan/success"}>
+                            <Box
+                                borderRadius="15px"
+                                py={"15px"}
+                                mb={"15px"}
+                                color={"White"}
+                                background="#00AA12"
+                                display="flex"
+                                alignItems="center"
+                                textAlign={"center"}
+                                cursor="pointer"
+                                justifyContent="center"
+                                _hover={{
+                                    bg: "gray.100",
+                                    fontcolor: "black"
+                                }}
+                            >
+                                <Flex>
+                                    <Text fontFamily="Poppins" textAlign="center" w="100%" fontWeight="medium" fontSize="13px" color="white" mt={"3px"}>
+                                        Transfer
+                                    </Text>
+                                </Flex>
+                            </Box>
+                        </Link>
                     </div>
                 </div>
             </Stack>

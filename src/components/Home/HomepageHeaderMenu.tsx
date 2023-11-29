@@ -7,12 +7,12 @@ const menu = [
   {
     title: "Tarik",
     icon: "tarik",
-    link: "/saldo/top-up"
+    link: "/penarikan"
   },
   {
     title: "Riwayat",
     icon: "riwayat",
-    link: "/saldo?tab=mutasi"
+    link: "/penarikan/history"
   }
 ]
 

@@ -6,7 +6,7 @@ import MisiList from "@/components/Misi/MisiList";
 import AddNewBankAccountForm from "@/modules/AddNewBankAccountForm";
 import { Box, Center, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Container, Image, HStack, Stack, Divider, Accordion, AccordionItem, AccordionIcon, AccordionButton, AccordionPanel, FormControl, Input } from '@chakra-ui/react';
 import { useState } from "react";
-export default function MisiSubDetail() {
+export default function MisiSubDetailValidasi() {
     const [activeTab, setActiveTab] = useState(0)
     const [isAccordionOpenTutorial, setIsAccordionOpenTutorial] = useState(false);
     const [isAccordionOpenStepSuccess, setIsAccordionOpenStepSuccess] = useState(false);
@@ -40,9 +40,12 @@ export default function MisiSubDetail() {
                             maxWidth='100%'
                         />
                         <Stack ms={4} gap={3}>
-                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>Follow Akun Instagram </Text>
-                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"} as='u'>@makana</Text>
-                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"}>Rp 1.500</Text>
+                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>Validasi Follow Akun Instagram </Text>
+                            <HStack>
+                                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"} as='u'>@issa.dee</Text>
+                                <Text fontFamily="Poppins" color={"#4A4A4A"} >memfollow akun </Text>
+                                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"} as='u'>@makana</Text>
+                            </HStack>
                         </Stack>
                     </HStack>
                 </Box>
@@ -52,14 +55,13 @@ export default function MisiSubDetail() {
                         <Box w={"20px"}>
                             <AppIcon src={"timeicon"} color={"black"} />
                         </Box>
-                        <Text fontFamily="Poppins" fontWeight={"medium"} color={"#4A4A4A"}>Follow Akun Instagram </Text>
+                        <HStack gap={0}>
+                            <Text fontFamily="Poppins" color={"#4A4A4A"}>Jumlah validasi :</Text>
+                            <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"} ms={"10px"}>1</Text>
+                            <Text fontFamily="Poppins" color={"#4A4A4A"}>/2</Text>
+                        </HStack>
                     </Flex>
-                    <Flex gap={2} mt={"6px"}>
-                        <Box w={"20px"}>
-                            <AppIcon src={"usericon"} color={"black"} />
-                        </Box>
-                        <Text fontFamily="Poppins" fontWeight={"medium"} color={"#4A4A4A"}>Kuota : 1.000 </Text>
-                    </Flex>
+
                 </Box>
                 <Divider my={"16px"} color={"#E8E8E8"} borderWidth={"1.1px"} />
                 <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"} fontSize={"16px"}>Panduan Pengerjaan</Text>
@@ -107,28 +109,6 @@ export default function MisiSubDetail() {
                 </Accordion>
                 <Divider my={"16px"} color={"#E8E8E8"} borderWidth={"1.1px"} />
                 <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"} fontSize={"16px"}>Submit Pengerjaan</Text>
-                <Text fontFamily="Poppins" fontWeight={"medium"} color={"#1D1D1D"} mt={"20px"}>Username Instagrammu</Text>
-                <Text fontFamily="Poppins" fontWeight={"regular"} color={"#6D6B6E"} mt={"10px"}>Tulis username instagram yang digunakan untuk mengikuti akun tertera</Text>
-
-                <FormControl id='username' mt={"10px"}>
-                    <Input
-                        borderRadius={"10px"}
-                        placeholder=' '
-                        type='text'
-                        bg='#F2F2F2'
-                        fontSize={"13px"}
-                        fontFamily='Poppins'
-                        fontWeight='medium'
-                        color='#1D1D1D'
-                        h={"50px"}
-                        onChange={(e) => { }}
-                    />
-                </FormControl>
-                <Text fontFamily="Poppins" fontWeight={"medium"} color={"#1D1D1D"} mt={"20px"}>Screenshot Profil Instagrammu</Text>
-                <Box my={"15px"}>
-                    <ImageUpload key={"A"} />
-                </Box>
-
                 <Text fontFamily="Poppins" fontWeight={"medium"} color={"#1D1D1D"} mt={"20px"}>Screenshot Follow Akun Target</Text>
                 <Box my={"15px"}>
                     <ImageUpload key={"B"} />
@@ -164,6 +144,8 @@ export default function MisiSubDetail() {
                     </div>
                 </div >
 
+
+                <Box h={"10px"} />
             </Container>
         </DashboardLayout>
     );

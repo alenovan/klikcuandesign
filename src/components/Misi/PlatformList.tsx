@@ -23,7 +23,7 @@ const menu = [
     {
         title: "Instagram",
         icon: "https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2Finstagram-2-1-logo%202.png?alt=media&token=03758d37-511b-46bb-a154-beb82912a4b0",
-        link: ""
+        link: "instagram"
     },
     {
         title: "Youtube",
@@ -74,7 +74,7 @@ const PlatformListList = (props: PlatformListListProps) => {
                     <GridItem key={""}>
                         <PlatformlListItemItem
                             icon={item.icon}
-                            link={`misi/` + item.title}
+                            link={`misi/` + item.link}
                             title={item.title}
                         />
                     </GridItem>
