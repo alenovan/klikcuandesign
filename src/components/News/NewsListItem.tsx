@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 
 interface INews {
@@ -10,7 +11,7 @@ interface INews {
 }
 const NewsListItem = (props: INews) => {
     return (
-        <>
+        <Link passHref href={"/artikel/1"}>
             <Box
                 borderWidth="1px"
                 borderRadius="10px"
@@ -43,7 +44,7 @@ const NewsListItem = (props: INews) => {
                     </Box>
                 </Flex >
             </Box >
-        </>
+        </Link>
 
 
     );
