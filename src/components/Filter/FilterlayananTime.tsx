@@ -60,7 +60,7 @@ const FilterLayananTime = (props: FilterProps) => {
             >
                 <Stack spacing="24px">
                     {priceList.map((item, i) => (
-                        <HStack>
+                        <HStack key={i}>
                             <Radio
                                 key={i}
                                 value={item.value}
