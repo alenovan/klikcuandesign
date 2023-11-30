@@ -83,7 +83,7 @@ export default function Profile() {
                     </Flex>
                 </Box>
 
-                <Link passHref href={"/profile/edit"}>
+                <Link passHref href={"/rekening"}>
                     <Box
                         cursor={"pointer"}
                         mb={"20px"}
