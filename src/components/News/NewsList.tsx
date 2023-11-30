@@ -13,7 +13,7 @@ const menu = [
     {
         text: "Lorem ipsum dolor sit amet consectetur. Ullamcorper tortor a nunc ut felis.",
         title: "Makin Seru!",
-        icon: "https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2FFrame%201.png?alt=media&token=1825c3e7-1b2d-4051-bf2d-3b87c94b3538",
+        icon: "https://firebasestorage.googleapis.com/v0/b/resellerindo-revamp-fe008.appspot.com/o/dummyclickcuan%2Fbigimage.png?alt=media&token=2b111572-0c5e-4627-9bf7-4d985e05b1a4",
         link: ""
     },
 ]

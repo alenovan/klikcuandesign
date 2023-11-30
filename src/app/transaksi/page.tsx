@@ -4,8 +4,12 @@ import { Box, Center, Flex, HStack, Tab, TabList, TabPanel, TabPanels, Tabs, Tex
 import { useState } from "react";
 import AppIcon from "@/components/AppIcon";
 import TransaksiList from "@/components/Transaksi/TransaksiList";
+import FilterLayanan from "@/components/Filter/Filterlayanan";
+import FilterLayananTime from "@/components/Filter/FilterlayananTime";
 export default function Transaksi() {
     const [activeTab, setActiveTab] = useState(0)
+    const [openFilterMisi, setOpenFilterMisi] = useState(false);
+    const [openFilterTime, setOpenFilterTime] = useState(false);
     return (
         <DashboardLayout
             bottomNavigation={true}
@@ -43,6 +47,10 @@ export default function Transaksi() {
                     </TabList>
                     <HStack mt={5}>
                         <Box
+                            onClick={() => {
+                                setOpenFilterMisi(true);
+                                console.log(openFilterMisi);
+                            }}
                             ml={"10px"}
                             borderRadius="full"
                             border="1px"
@@ -68,6 +76,9 @@ export default function Transaksi() {
                             borderRadius="full"
                             border="1px"
                             px={4}
+                            onClick={() => {
+                                setOpenFilterTime(true);
+                            }}
                             py={2}
                             borderColor="#CECECE"
                             display="flex"
@@ -81,6 +92,7 @@ export default function Transaksi() {
                             <Text fontFamily="Poppins" fontWeight="medium" fontSize="13px" color="#7B8CA7" mr={"5px"}>
                                 Semua Bulan
                             </Text>
+
                             <Flex alignItems="center">
                                 <AppIcon src={"chevron-down"} color={"black"} />
                             </Flex>
@@ -96,6 +108,8 @@ export default function Transaksi() {
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
+                <FilterLayanan open={openFilterMisi} onClose={() => setOpenFilterMisi(false)} />
+                <FilterLayananTime open={openFilterTime} onClose={() => setOpenFilterTime(false)} />
             </Box>
 
         </DashboardLayout>
