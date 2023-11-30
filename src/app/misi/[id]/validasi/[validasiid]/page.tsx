@@ -41,10 +41,10 @@ export default function MisiSubDetailValidasi() {
                         />
                         <Stack ms={4} gap={3}>
                             <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#001F25"}>Validasi Follow Akun Instagram </Text>
-                            <HStack>
-                                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"} as='u'>@issa.dee</Text>
-                                <Text fontFamily="Poppins" color={"#4A4A4A"} >memfollow akun </Text>
-                                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#00AA12"} as='u'>@makana</Text>
+                            <HStack whiteSpace="nowrap">
+                                <Text fontFamily="Poppins" fontWeight="semibold" color="#00AA12" as='u'>@issa.dee</Text>
+                                <Text fontFamily="Poppins" color="#4A4A4A">memfollow akun </Text>
+                                <Text fontFamily="Poppins" fontWeight="semibold" color="#00AA12" as='u'>@makana</Text>
                             </HStack>
                         </Stack>
                     </HStack>
