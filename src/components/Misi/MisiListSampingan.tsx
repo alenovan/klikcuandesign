@@ -29,10 +29,7 @@ const MisiListSampingan = () => {
     return (
         <Stack mt={"10px"}>
             {data?.map((item, i) => (
-                <Link key={i} href={{
-                    pathname: "Instagram/validasi/" + item.id,
-                }}
-                    passHref>
+                <Link key={i} passHref href={"Instagram/validasi/" + item.id}>
                     <Box
                         cursor={"pointer"}
                         backgroundColor="white"
