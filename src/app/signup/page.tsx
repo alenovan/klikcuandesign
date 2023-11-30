@@ -31,6 +31,7 @@ export default function SignUp() {
               placeholder=' '
               type='text'
               bg='#F2F2F2'
+              h={"45px"}
               fontSize={"13px"}
               fontFamily='Poppins'
               fontWeight='medium'
@@ -51,6 +52,7 @@ export default function SignUp() {
                 fontSize={"13px"}
                 fontWeight='medium'
                 color='#1D1D1D'
+                h={"45px"}
                 placeholder='Umur kamu'
                 onChange={(e) => { }}
               >
@@ -91,6 +93,7 @@ export default function SignUp() {
                 placeholder=' '
                 type='text'
                 bg='#F2F2F2'
+                h={"45px"}
                 fontSize={"13px"}
                 fontFamily='Poppins'
                 fontWeight='medium'
@@ -109,6 +112,7 @@ export default function SignUp() {
               borderRadius={"10px"}
               placeholder=' '
               type='text'
+              h={"45px"}
               bg='#F2F2F2'
               fontSize={"13px"}
               fontFamily='Poppins'
@@ -127,6 +131,7 @@ export default function SignUp() {
             fontFamily='Poppins'
             fontSize={"13px"}
             fontWeight='medium'
+            h={"45px"}
             color='#1D1D1D'
             placeholder='Provinsi'
             onChange={(e) => { }}
@@ -141,6 +146,7 @@ export default function SignUp() {
             fontFamily='Poppins'
             fontSize={"13px"}
             fontWeight='medium'
+            h={"45px"}
             color='#1D1D1D'
             placeholder='Kota'
             onChange={(e) => { }}

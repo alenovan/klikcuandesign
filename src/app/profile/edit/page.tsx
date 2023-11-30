@@ -31,6 +31,7 @@ export default function EditProfile() {
                             placeholder=' '
                             type='text'
                             bg='#F2F2F2'
+                            h={"45px"}
                             fontSize={"13px"}
                             fontFamily='Poppins'
                             fontWeight='medium'
@@ -48,6 +49,7 @@ export default function EditProfile() {
                                 bg='#F2F2F2'
                                 borderRadius="10px"
                                 fontFamily='Poppins'
+                                h={"45px"}
                                 fontSize={"13px"}
                                 fontWeight='medium'
                                 color='#1D1D1D'
@@ -90,6 +92,7 @@ export default function EditProfile() {
                                 borderRadius={"10px"}
                                 placeholder=' '
                                 type='text'
+                                h={"45px"}
                                 bg='#F2F2F2'
                                 fontSize={"13px"}
                                 fontFamily='Poppins'
@@ -109,6 +112,7 @@ export default function EditProfile() {
                             borderRadius={"10px"}
                             placeholder=' '
                             type='text'
+                            h={"45px"}
                             bg='#F2F2F2'
                             fontSize={"13px"}
                             fontFamily='Poppins'
@@ -127,6 +131,7 @@ export default function EditProfile() {
                             placeholder=' '
                             type='text'
                             bg='#F2F2F2'
+                            h={"45px"}
                             fontSize={"13px"}
                             fontFamily='Poppins'
                             fontWeight='medium'
@@ -143,6 +148,7 @@ export default function EditProfile() {
                             placeholder=' '
                             type='text'
                             bg='#F2F2F2'
+                            h={"45px"}
                             fontSize={"13px"}
                             fontFamily='Poppins'
                             fontWeight='medium'

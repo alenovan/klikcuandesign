@@ -172,24 +172,27 @@ export default function Profile() {
                     </Stack>
                 </Box>
                 <Box my={"8px"}></Box>
-                <Box
-                    mb={"20px"}
-                    backgroundColor="white"
-                    borderRadius="18px"
-                    boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
-                    px={5}
-                    py="10px"
-                >
-                    <Flex justifyContent="space-between" >
-                        <HStack gap={5}>
-                            <AppIcon src={"profile/keluar"} color={"black"} />
-                            <Stack gap={1}>
-                                <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"}>Keluar </Text>
-                            </Stack>
-                        </HStack>
-                        <AppIcon src={"profile/chevronright-primary"} color={"black"} />
-                    </Flex>
-                </Box>
+                <Link passHref href={"/signin"}>
+                    <Box
+                        cursor={"pointer"}
+                        mb={"20px"}
+                        backgroundColor="white"
+                        borderRadius="18px"
+                        boxShadow="0px 5px 10px rgba(56, 89, 147, 0.05);"
+                        px={5}
+                        py="10px"
+                    >
+                        <Flex justifyContent="space-between" >
+                            <HStack gap={5}>
+                                <AppIcon src={"profile/keluar"} color={"black"} />
+                                <Stack gap={1}>
+                                    <Text fontFamily="Poppins" fontWeight={"semibold"} color={"#4A4A4A"}>Keluar </Text>
+                                </Stack>
+                            </HStack>
+                            <AppIcon src={"profile/chevronright-primary"} color={"black"} />
+                        </Flex>
+                    </Box>
+                </Link>
                 <Box my={"60px"}></Box>
             </Stack>
         </DashboardLayout>

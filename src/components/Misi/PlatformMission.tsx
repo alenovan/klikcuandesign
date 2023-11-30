@@ -18,9 +18,6 @@ const PlatformMission = (props: PlatformMissionProps) => {
         <Link
             href={{
                 pathname: link,
-                query: {
-                    platfrom: platfrom,
-                },
             }}
             passHref>
             <Box as='a' display='block' width='100%'>
